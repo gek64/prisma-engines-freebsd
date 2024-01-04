@@ -61,7 +61,7 @@ npx prisma -v
 ### use as library
 
 ```sh
-# copy libquery_engine.so.node to project ncc(https://github.com/vercel/ncc) dist folder
+# copy libquery_engine.so.node to the dist folder of the project compiled with ncc(https://github.com/vercel/ncc)
 cp "/usr/share/prisma-engines/libquery_engine.so.node" "$HOME/moneybook/dist/libquery_engine-$FreeBSD_Version.so.node"
 
 # copy libquery_engine.so.node to project node_modules folder
