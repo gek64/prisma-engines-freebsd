@@ -54,7 +54,7 @@ export PRISMA_SCHEMA_ENGINE_BINARY="/usr/share/prisma-engines/schema-engine"
 export PRISMA_CLI_QUERY_ENGINE_TYPE="library"
 export PRISMA_CLIENT_ENGINE_TYPE="library"
 
-# test if install npm
+# run test
 npx prisma -v
 ```
 
