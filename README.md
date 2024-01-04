@@ -1,7 +1,7 @@
 # prisma-engines-freebsd
 
 1. Scripts for building the prisma engine on your own device
-2. Precompiled prisma engine for freebsd 11-14
+2. [Precompiled prisma engine](https://github.com/gek64/prisma-engines-freebsd/releases) for freebsd 11-14
 3. Prisma engine usage guide in freebsd
 
 ## usage
