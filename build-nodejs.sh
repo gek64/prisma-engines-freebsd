@@ -27,7 +27,7 @@ fi
 
 # nodejs
 git clone --depth 1 --recurse-submodules --branch "v20.x" "https://github.com/nodejs/node.git" "$HOME/node"
-cd node && ls
+cd node || exit
 ## 显示所有静态配置选项 ./configure --help | grep static
 ./configure --prefix=/tmp/node --enable-static && make install -j "$(sysctl -n hw.ncpu)"
 ## 压缩打包
