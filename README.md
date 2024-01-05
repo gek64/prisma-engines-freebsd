@@ -70,8 +70,12 @@ cp "/usr/share/prisma-engines/libquery_engine.so.node" "$HOME/moneybook/node_mod
 
 ## compile yourself
 
+- system memory >= 8GB
+
 ```sh
+# compile
 curl -sSf https://raw.githubusercontent.com/gek64/prisma-engines-freebsd/main/build-prisma-engines.sh | sh
 
+# check
 ls "$HOME/prisma-engines-*.zip"
 ```
