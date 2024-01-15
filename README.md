@@ -6,9 +6,9 @@
 
 ## usage
 
-- for freebsd < 14, download `prisma-engines-FreeBSD_13.2-RELEASE_amd64.zip`, test on freebsd 13.2, freebsd 12.4
+- for freebsd < 14, download `prisma-engines-FreeBSD_13.2-RELEASE_amd64.tar.gz`, test on freebsd 13.2, freebsd 12.4
 
-- for freebsd >= 14, download `prisma-engines-FreeBSD_14.0-RELEASE_amd64.zip`, test on freebsd 14.0
+- for freebsd >= 14, download `prisma-engines-FreeBSD_14.0-RELEASE_amd64.tar.gz`, test on freebsd 14.0
 
 ### use as environment variable
 
@@ -19,27 +19,27 @@
 case "$(uname -r)" in
 *"11."*)
   FreeBSD_Version=freebsd11
-  Prisma_Build=https://github.com/gek64/prisma-engines-freebsd/releases/download/latest/prisma-engines-FreeBSD_13.2-RELEASE_amd64.zip
+  Prisma_Build=https://github.com/gek64/prisma-engines-freebsd/releases/download/latest/prisma-engines-FreeBSD_13.2-RELEASE_amd64.tar.gz
   ;;
 *"12."*)
   FreeBSD_Version=freebsd12
-  Prisma_Build=https://github.com/gek64/prisma-engines-freebsd/releases/download/latest/prisma-engines-FreeBSD_13.2-RELEASE_amd64.zip
+  Prisma_Build=https://github.com/gek64/prisma-engines-freebsd/releases/download/latest/prisma-engines-FreeBSD_13.2-RELEASE_amd64.tar.gz
   ;;
 *"13."*)
   FreeBSD_Version=freebsd13
-  Prisma_Build=https://github.com/gek64/prisma-engines-freebsd/releases/download/latest/prisma-engines-FreeBSD_13.2-RELEASE_amd64.zip
+  Prisma_Build=https://github.com/gek64/prisma-engines-freebsd/releases/download/latest/prisma-engines-FreeBSD_13.2-RELEASE_amd64.tar.gz
   ;;
 *"14."* | *)
   FreeBSD_Version=freebsd14
-  Prisma_Build=https://github.com/gek64/prisma-engines-freebsd/releases/download/latest/prisma-engines-FreeBSD_14.0-RELEASE_amd64.zip
+  Prisma_Build=https://github.com/gek64/prisma-engines-freebsd/releases/download/latest/prisma-engines-FreeBSD_14.0-RELEASE_amd64.tar.gz
   ;;
 esac
 
 # download prisma-engines
-curl -Lo "/tmp/prisma-engines.zip" $Prisma_Build
+curl -Lo "/tmp/prisma-engines.tar.gz" $Prisma_Build
 
 # unzip prisma-engines
-unzip -o "/tmp/prisma-engines.zip" -d /tmp/prisma-engines
+mkdir -p /tmp/prisma-engines && tar -xvf "/tmp/prisma-engines.tar.gz" -C /tmp/prisma-engines
 
 # rename libquery_engine.so
 mv "/tmp/prisma-engines/libquery_engine.so" "/tmp/prisma-engines/libquery_engine.so.node"
@@ -79,5 +79,5 @@ curl -sSf https://raw.githubusercontent.com/gek64/prisma-engines-freebsd/main/bu
 curl -sSf https://raw.githubusercontent.com/gek64/prisma-engines-freebsd/main/build-prisma-engines.sh | sh -s -- -c
 
 # check
-ls "$HOME/prisma-engines-*.zip"
+ls "$HOME/prisma-engines-*.tar.gz"
 ```
