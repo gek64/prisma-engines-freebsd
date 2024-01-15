@@ -52,8 +52,7 @@ Compile_Prisma() {
   RUSTFLAGS="-l static=ssl -l static=crypto -L /usr/local/lib" cargo build --release
 
   ## 压缩打包
-  cd "$HOME/prisma-engines/target/release" || exit
-  zip -9 -r -UN=UTF8 "$HOME/prisma-engines-$(uname -o)_$(uname -r)_$(uname -p).zip" query-engine libquery_engine.so schema-engine
+  tar -czvf "$HOME/prisma-engines-$(uname -o)_$(uname -r)_$(uname -p).tar.gz" -C "$HOME/prisma-engines/target/release" test-cli prisma-fmt schema-engine query-engine libquery_engine.so
 }
 
 Init() {

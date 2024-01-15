@@ -6,9 +6,9 @@ export CXX=clang++
 
 # nodejs
 git clone --depth 1 --recurse-submodules --branch "v20.x" "https://github.com/nodejs/node.git" "$HOME/node"
-cd node || exit
+cd "$HOME/node" || exit
 ## 显示所有静态配置选项 ./configure --help | grep static
 ./configure --prefix=/tmp/node --enable-static
 make -j "$(sysctl -n hw.ncpu)" && make install
 ## 压缩打包
-cd /tmp/ && zip -9 -r -y -UN=UTF8 "$HOME/node-$(/tmp/node/bin/node -v)_$(uname -o)_$(uname -r)_$(uname -p).zip" node
+tar -czvf "$HOME/node-$(/tmp/node/bin/node -v)_$(uname -o)_$(uname -r)_$(uname -p).tar.gz" -C "/tmp" node
