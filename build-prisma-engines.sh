@@ -10,7 +10,7 @@ Check_Command() {
 }
 
 Install_Toolchain() {
-  pkg install -y zip git curl protobuf ca_root_nss
+  pkg install -y git curl protobuf ca_root_nss
   export CC=clang
   export CXX=clang++
 }
@@ -18,7 +18,7 @@ Install_Toolchain() {
 Install_Openssl() {
   case "$(uname -r)" in
   *"11."* | *"12."* | *"13."*)
-    pkg install -y openssl
+    pkg install -y openssl111
     ;;
   *"14."* | *)
     pkg install -y openssl32

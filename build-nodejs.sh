@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-pkg install -y gmake zip git
+pkg install -y gmake git
 export CC=clang
 export CXX=clang++
 
